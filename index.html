@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Couscous Royal</title>
+    <title>Riz Djerbien</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,24 +18,17 @@
         }
         header {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Arrange les éléments en colonne */
             justify-content: center;
-            align-items: center;
+            align-items: center; /* Centre les éléments horizontalement */
             background-color: #bdc9cc;
             color: Black;
             border-radius: 8px;
             padding: 10px;
-            text-align: center;
-            position: relative;
-        }
-        header .logo {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 100px;
+            text-align: center; /* Centre le texte */
         }
         header .flags {
-            margin-top: 10px;
+            margin-top: 10px; /* Ajoute un espace entre le titre et les drapeaux */
         }
         header h1 {
             margin: 0;
@@ -53,17 +46,17 @@
             transform: scale(1.5);
         }
         .dish-image {
-            display: block;
+            display: block;  /* Ensures the image is treated as a block element */
             width: 60%;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto;  /* This centers the image horizontally */
             border-radius: 20px;
             transition: transform 0.5s ease-in-out;
         }
         .dish-image:hover {
             transform: scale(1.01); rotate(5deg); /* Agrandissement et légère rotation */
             opacity: 0.5; /* Réduction légère de l'opacité */
-        
+
         }
         .logo {
             display: block;
@@ -76,18 +69,13 @@
 
         .logo:hover {
             transform: scale(1.1);
-
         }
         .overview, .calories, .components, .allergies, .history, .serving {
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.5s ease-in-out;
-        }
 
-        .overview:hover {
-            transform: scale(1.01);
         }
         .overview {
             background-color: #f8f8f8;
@@ -126,142 +114,176 @@
     </style>
     <script>
         function switchLanguage(language) {
-            const translations = {
-                'fr': {
-                    title: 'Couscous Royal',
-                    overview: 'Présentation',
-                    calories: 'Calories',
-                    components: 'Composants principaux',
-                    allergies: 'Allergènes',
-                    history: 'Histoire',
-                    serving: 'Présentation'
-                },
-                'en': {
-                    title: 'Royal Couscous',
-                    overview: 'Overview',
-                    calories: 'Calories',
-                    components: 'Main Ingredients',
-                    allergies: 'Allergens',
-                    history: 'History',
-                    serving: 'Serving'
-                },
-                'es': {
-                    title: 'Cuscús Real',
-                    overview: 'Descripción',
-                    calories: 'Calorías',
-                    components: 'Ingredientes principales',
-                    allergies: 'Alergias',
-                    history: 'Historia',
-                    serving: 'Servicio'
-                },
-                'de': {
-                    title: 'Königlicher Couscous',
-                    overview: 'Überblick',
-                    calories: 'Kalorien',
-                    components: 'Hauptzutaten',
-                    allergies: 'Allergene',
-                    history: 'Geschichte',
-                    serving: 'Servieren'
-                },
-                'it': {
-                    title: 'Couscous Reale',
-                    overview: 'Panoramica',
-                    calories: 'Calorie',
-                    components: 'Ingredienti principali',
-                    allergies: 'Allergeni',
-                    history: 'Storia',
-                    serving: 'Servizio'
-                },
-                'pl': {
-                    title: 'Królewski Kus-kus',
-                    overview: 'Przegląd',
-                    calories: 'Kalorie',
-                    components: 'Główne składniki',
-                    allergies: 'Alergeny',
-                    history: 'Historia',
-                    serving: 'Serwowanie'
-                },
-                'ar': {
-                    title: 'كسكسي ملكي',
-                    overview: 'نظرة عامة',
-                    calories: 'السعرات الحرارية',
-                    components: 'المكونات الرئيسية',
-                    allergies: 'المواد المثيرة للحساسية',
-                    history: 'التاريخ',
-                    serving: 'طريقة التقديم'
-                }
+            const texts = {
+                'fr': 'Riz Djerbien',
+                'en': 'Djerba Rice',
+                'es': 'Arroz Djerbio',
+                'de': 'Djerba-Reis',
+                'it': 'Riso Djerbio',
+                'pl': 'Ryż Djerbien',
+                'ar': 'الأرز الجربي'
             };
 
-            const content = translations[language];
-            document.querySelector('header h1').textContent = content.title;
-            document.querySelector('.overview h2').textContent = content.overview;
-            document.querySelector('.calories h2').textContent = content.calories;
-            document.querySelector('.components h2').textContent = content.components;
-            document.querySelector('.allergies h2').textContent = content.allergies;
-            document.querySelector('.history h2').textContent = content.history;
-            document.querySelector('.serving h2').textContent = content.serving;
+            const overviews = {
+                'fr': 'Le Riz Djerbien est un plat typique de l\'île de Djerba, préparé avec du riz et des épices locales.',
+                'en': 'Djerba Rice is a typical dish from the island of Djerba, made with rice and local spices.',
+                'es': 'El Arroz Djerbio es un plato típico de la isla de Djerba, hecho con arroz y especias locales.',
+                'de': 'Djerba-Reis ist ein typisches Gericht von der Insel Djerba, zubereitet mit Reis und lokalen Gewürzen.',
+                'it': 'Il Riso Djerbio è un piatto tipico dell\'isola di Djerba, fatto con riso e spezie locali.',
+                'pl': 'Ryż Djerbien to typowe danie z wyspy Djerba, przygotowywane z ryżu i lokalnych przypraw.',
+                'ar': 'الأرز الجربي هو طبق تقليدي من جزيرة جربة، محضر من الأرز وتوابل محلية.'
+            };
+
+            const calories = {
+                'fr': 'Environ 250 calories par portion...',
+                'en': 'About 250 calories per serving...',
+                'es': 'Alrededor de 250 calorías por porción...',
+                'de': 'Etwa 250 Kalorien pro Portion...',
+                'it': 'Circa 250 calorie per porzione...',
+                'pl': 'Około 250 kalorii na porcję...',
+                'ar': 'حوالي 250 سعرة حرارية لكل حصة...'
+            };
+
+            const components = {
+                'fr': 'Composants principaux : Riz, épices, légumes, poulet ou poisson selon la recette...',
+                'en': 'Main ingredients: Rice, spices, vegetables, chicken or fish depending on the recipe...',
+                'es': 'Ingredientes principales: Arroz, especias, verduras, pollo o pescado según la receta...',
+                'de': 'Hauptzutaten: Reis, Gewürze, Gemüse, Huhn oder Fisch je nach Rezept...',
+                'it': 'Ingredienti principali: Riso, spezie, verdure, pollo o pesce a seconda della ricetta...',
+                'pl': 'Główne składniki: Ryż, przyprawy, warzywa, kurczak lub ryba w zależności od przepisu...',
+                'ar': 'المكونات الرئيسية: الأرز، التوابل، الخضروات، الدجاج أو السمك حسب الوصفة...'
+            };
+
+            const allergies = {
+                'fr': 'Allergènes : Peut contenir des traces de gluten, fruits de mer selon la recette.',
+                'en': 'Allergens: May contain traces of gluten, seafood depending on the recipe.',
+                'es': 'Alergénicos: Puede contener trazas de gluten, mariscos según la receta.',
+                'de': 'Allergene: Kann Spuren von Gluten und Meeresfrüchten enthalten, je nach Rezept.',
+                'it': 'Allergeni: Può contenere tracce di glutine e frutti di mare a seconda della ricetta.',
+                'pl': 'Alergeny: Może zawierać śladowe ilości glutenu i owoców morza, w zależności od przepisu.',
+                'ar': 'المواد المثيرة للحساسية: قد تحتوي على آثار من الجلوتين، المأكولات البحرية وفقًا للوصفة.'
+            };
+
+            const history = {
+                'fr': 'Le Riz Djerbien a des racines profondes dans la cuisine tunisienne et méditerranéenne, souvent servi lors des célébrations.',
+                'en': 'Djerba Rice has deep roots in Tunisian and Mediterranean cuisine, often served during celebrations.',
+                'es': 'El Arroz Djerbio tiene raíces profundas en la cocina tunecina y mediterránea, a menudo servido en celebraciones.',
+                'de': 'Djerba-Reis hat tiefe Wurzeln in der tunesischen und mediterranen Küche, oft bei Feiern serviert.',
+                'it': 'Il Riso Djerbio ha profonde radici nella cucina tunisina e mediterranea, spesso servito durante le celebrazioni.',
+                'pl': 'Ryż Djerbien ma głębokie korzenie w kuchni tunezyjskiej i śródziemnomorskiej, często podawany podczas uroczystości.',
+                'ar': 'الأرز الجربي له جذور عميقة في المطبخ التونسي والمتوسطي، وغالبًا ما يتم تقديمه خلال الاحتفالات.'
+            };
+
+            const serving = {
+                'fr': 'Le Riz Djerbien est généralement servi avec des légumes grillés et une sauce piquante.',
+                'en': 'Djerba Rice is usually served with grilled vegetables and a spicy sauce.',
+                'es': 'El Arroz Djerbio generalmente se sirve con verduras a la parrilla y una salsa picante.',
+                'de': 'Djerba-Reis wird normalerweise mit gegrilltem Gemüse und einer scharfen Sauce serviert.',
+                'it': 'Il Riso Djerbio è solitamente servito con verdure grigliate e una salsa piccante.',
+                'pl': 'Ryż Djerbien zazwyczaj podaje się z grillowanymi warzywami i pikantnym sosem.',
+                'ar': 'يُقدّم الأرز الجربي عادةً مع الخضروات المشوية وصوص حار.'
+            };
+
+            // Switch content based on the selected language
+            document.querySelector('.container h1').textContent = texts[language];
+            document.querySelector('.overview h2').textContent = language === 'en' ? 'Overview' : 
+                (language === 'es' ? 'Visión general' : 
+                (language === 'de' ? 'Übersicht' : 
+                (language === 'it' ? 'Panoramica' : 
+                (language === 'pl' ? 'Przegląd' : 
+                (language === 'ar' ? 'نظرة عامة' : 'Présentation')))));
+            document.querySelector('.calories h2').textContent = language === 'en' ? 'Calories' : 
+                (language === 'es' ? 'Calorías' : 
+                (language === 'de' ? 'Kalorien' : 
+                (language === 'it' ? 'Calorie' : 
+                (language === 'pl' ? 'Kalorie' : 
+                (language === 'ar' ? 'السعرات الحرارية' : 'Calories')))));
+            document.querySelector('.components h2').textContent = language === 'en' ? 'Ingredients' : 
+                (language === 'es' ? 'Ingredientes' : 
+                (language === 'de' ? 'Zutaten' : 
+                (language === 'it' ? 'Ingredienti' : 
+                (language === 'pl' ? 'Składniki' : 
+                (language === 'ar' ? 'المكونات' : 'Ingrédients')))));
+            document.querySelector('.allergies h2').textContent = language === 'en' ? 'Allergens' : 
+                (language === 'es' ? 'Alergénicos' : 
+                (language === 'de' ? 'Allergene' : 
+                (language === 'it' ? 'Allergeni' : 
+                (language === 'pl' ? 'Alergeny' : 
+                (language === 'ar' ? 'المواد المثيرة للحساسية' : 'Allergènes')))));
+            document.querySelector('.history h2').textContent = language === 'en' ? 'History' : 
+                (language === 'es' ? 'Historia' : 
+                (language === 'de' ? 'Geschichte' : 
+                (language === 'it' ? 'Storia' : 
+                (language === 'pl' ? 'Historia' : 
+                (language === 'ar' ? 'التاريخ' : 'Historique')))));
+            document.querySelector('.serving h2').textContent = language === 'en' ? 'Serving' : 
+                (language === 'es' ? 'Servicio' : 
+                (language === 'de' ? 'Servieren' : 
+                (language === 'it' ? 'Servire' : 
+                (language === 'pl' ? 'Serwowanie' : 
+                (language === 'ar' ? 'طريقة التقديم' : 'Service')))));
+
+            document.querySelector('.overview p').textContent = overviews[language];
+            document.querySelector('.calories p').textContent = calories[language];
+            document.querySelector('.components p').textContent = components[language];
+            document.querySelector('.allergies p').textContent = allergies[language];
+            document.querySelector('.history p').textContent = history[language];
+            document.querySelector('.serving p').textContent = serving[language];
         }
     </script>
 </head>
 <body>
-
     <div class="container">
         <header>
-
-            <h1>Couscous Royal</h1>
+            <h1 id="dish-name">Riz Djerbien</h1>
             <div class="flags">
-                <img src="https://flagcdn.com/fr.svg" alt="Français" title="Français" onclick="switchLanguage('fr')">
+                <img src="https://flagcdn.com/fr.svg" alt="French" title="Français" onclick="switchLanguage('fr')">
                 <img src="https://flagcdn.com/gb.svg" alt="English" title="English" onclick="switchLanguage('en')">
-                <img src="https://flagcdn.com/es.svg" alt="Español" title="Español" onclick="switchLanguage('es')">
-                <img src="https://flagcdn.com/de.svg" alt="Deutsch" title="Deutsch" onclick="switchLanguage('de')">
-                <img src="https://flagcdn.com/it.svg" alt="Italiano" title="Italiano" onclick="switchLanguage('it')">
-                <img src="https://flagcdn.com/pl.svg" alt="Polski" title="Polski" onclick="switchLanguage('pl')">
-                <img src="https://flagcdn.com/tn.svg" alt="العربية" title="العربية" onclick="switchLanguage('ar')">
+                <img src="https://flagcdn.com/es.svg" alt="Spanish" title="Español" onclick="switchLanguage('es')">
+                <img src="https://flagcdn.com/de.svg" alt="German" title="Deutsch" onclick="switchLanguage('de')">
+                <img src="https://flagcdn.com/it.svg" alt="Italian" title="Italiano" onclick="switchLanguage('it')">
+                <img src="https://flagcdn.com/pl.svg" alt="Polish" title="Polski" onclick="switchLanguage('pl')">
+                <img src="https://flagcdn.com/tn.svg" alt="Arabic" title="العربية" onclick="switchLanguage('ar')">
             </div>
         </header>
 
-
-        <img class="dish-image" src="https://fac.img.pmdstatic.net/fit/~1~fac~2018~07~30~94958cd5-6b38-46a6-a289-bb42cd7e2bd1.jpeg/850x478/quality/90/crop-from/center/couscous-royal-aux-3-viandes.jpeg" alt="Couscous Royal">
+        <img class="dish-image" src="https://www.tunisienumerique.com/wp-content/uploads/2023/01/rouz-jerbi.jpg" alt="Riz Djerbien">
         <div class="overview">
-            <h2>Présentation</h2>
-            <p>Le Couscous Royal est un plat emblématique d'Afrique du Nord, composé de semoule de blé accompagnée de viandes variées, de légumes et d'épices.</p>
+            <h2>Aperçu</h2>
+            <p id="overview">Le Riz Djerbien est un plat typique de l'île de Djerba, préparé avec du riz et des épices locales.</p>
         </div>
 
         <div class="calories">
             <h2>Calories</h2>
-            <p>Environ 400 calories par portion.</p>
+            <p id="calories">Environ 250 calories par portion...</p>
         </div>
 
         <div class="components">
             <h2>Composants principaux</h2>
-            <p>Semoule de blé, agneau, poulet, merguez, courgettes, carottes, pois chiches, épices (cumin, curcuma, paprika).</p>
+            <p id="components">Composants principaux : Riz, épices, légumes, poulet ou poisson selon la recette...</p>
         </div>
 
         <div class="allergies">
             <h2>Allergènes</h2>
-            <p>Contient du gluten et peut contenir des traces de fruits à coque.</p>
+            <p id="allergies">Allergènes : Peut contenir des traces de gluten, fruits de mer selon la recette.</p>
         </div>
 
         <div class="history">
             <h2>Histoire</h2>
-            <p>Originaire d'Afrique du Nord, le couscous est un plat ancien qui symbolise le partage et la convivialité.</p>
+            <p id="history">Le Riz Djerbien a des racines profondes dans la cuisine tunisienne et méditerranéenne, souvent servi lors des célébrations.</p>
         </div>
 
         <div class="serving">
             <h2>Présentation</h2>
-            <p>Le Couscous Royal se sert avec une sauce épicée à base de tomate et un bol de bouillon chaud.</p>
+            <p id="serving">Le Riz Djerbien est généralement servi avec des légumes grillés et une sauce piquante.</p>
         </div>
 
         <div class="back-to-top">
             <a href="#">Retour en haut</a>
         </div>
-
-<p style="text-align: center; font-size: 12px;">&copy; 2025 Seabel Rym Beach Hotel. Tous droits réservés.</p>
+        <p style="text-align: center; font-size: 12px;">&copy; 2025 Seabel Rym Beach Hotel. Tous droits réservés.</p>
     </div>
         <img class="logo" src="https://www.seabelhotels.com/wp-content/uploads/2021/12/Logo_slide_rym_beach.png" alt="Seabel Rym Beach Hotel Logo">
         </div>
-
-
-
 </body>
 </html>
