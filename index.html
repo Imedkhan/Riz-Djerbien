@@ -285,5 +285,317 @@
     </div>
         <img class="logo" src="https://www.seabelhotels.com/wp-content/uploads/2021/12/Logo_slide_rym_beach.png" alt="Seabel Rym Beach Hotel Logo">
         </div>
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riz Djerbien</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            flex-direction: column; /* Arrange les éléments en colonne */
+            justify-content: center;
+            align-items: center; /* Centre les éléments horizontalement */
+            background-color: #bdc9cc;
+            color: Black;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center; /* Centre le texte */
+        }
+        header .flags {
+            margin-top: 10px; /* Ajoute un espace entre le titre et les drapeaux */
+        }
+        header h1 {
+            margin: 0;
+        }
+        .flags img {
+            width: 30px;
+            height: auto;
+            margin-left: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .flags img:hover {
+            transform: scale(1.5);
+        }
+        .dish-image {
+            display: block;  /* Ensures the image is treated as a block element */
+            width: 60%;
+            max-width: 700px;
+            margin: 0 auto;  /* This centers the image horizontally */
+            border-radius: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+        .dish-image:hover {
+            transform: scale(1.01); rotate(5deg); /* Agrandissement et légère rotation */
+            opacity: 0.5; /* Réduction légère de l'opacité */
+
+        }
+        .logo {
+            display: block;
+            width: 10%;
+            max-width: 100px;
+            margin: 0 auto;
+            border-radius: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+        .overview, .calories, .components, .allergies, .history, .serving {
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+        .overview {
+            background-color: #f8f8f8;
+        }
+        .calories {
+            background-color: #e8f7fa;
+        }
+        .components {
+            background-color: #f1f8e9;
+        }
+        .allergies {
+            background-color: #ffebee;
+        }
+        .history {
+            background-color: #fffae6;
+        }
+        .serving {
+            background-color: #e8f7e8;
+        }
+        .overview h2, .calories h2, .components h2, .allergies h2, .history h2, .serving h2 {
+            margin-top: 0;
+            color: #e94e77;
+        }
+        .back-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-to-top a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-to-top a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function switchLanguage(language) {
+            const texts = {
+                'fr': 'Riz Djerbien',
+                'en': 'Djerba Rice',
+                'es': 'Arroz Djerbio',
+                'de': 'Djerba-Reis',
+                'it': 'Riso Djerbio',
+                'pl': 'Ryż Djerbien',
+                'ar': 'الأرز الجربي'
+            };
+
+            const overviews = {
+                'fr': 'Le Riz Djerbien est un plat typique de l\'île de Djerba, préparé avec du riz et des épices locales.',
+                'en': 'Djerba Rice is a typical dish from the island of Djerba, made with rice and local spices.',
+                'es': 'El Arroz Djerbio es un plato típico de la isla de Djerba, hecho con arroz y especias locales.',
+                'de': 'Djerba-Reis ist ein typisches Gericht von der Insel Djerba, zubereitet mit Reis und lokalen Gewürzen.',
+                'it': 'Il Riso Djerbio è un piatto tipico dell\'isola di Djerba, fatto con riso e spezie locali.',
+                'pl': 'Ryż Djerbien to typowe danie z wyspy Djerba, przygotowywane z ryżu i lokalnych przypraw.',
+                'ar': 'الأرز الجربي هو طبق تقليدي من جزيرة جربة، محضر من الأرز وتوابل محلية.'
+            };
+
+            const calories = {
+                'fr': 'Environ 250 calories par portion...',
+                'en': 'About 250 calories per serving...',
+                'es': 'Alrededor de 250 calorías por porción...',
+                'de': 'Etwa 250 Kalorien pro Portion...',
+                'it': 'Circa 250 calorie per porzione...',
+                'pl': 'Około 250 kalorii na porcję...',
+                'ar': 'حوالي 250 سعرة حرارية لكل حصة...'
+            };
+
+            const components = {
+                'fr': 'Composants principaux : Riz, épices, légumes, poulet ou poisson selon la recette...',
+                'en': 'Main ingredients: Rice, spices, vegetables, chicken or fish depending on the recipe...',
+                'es': 'Ingredientes principales: Arroz, especias, verduras, pollo o pescado según la receta...',
+                'de': 'Hauptzutaten: Reis, Gewürze, Gemüse, Huhn oder Fisch je nach Rezept...',
+                'it': 'Ingredienti principali: Riso, spezie, verdure, pollo o pesce a seconda della ricetta...',
+                'pl': 'Główne składniki: Ryż, przyprawy, warzywa, kurczak lub ryba w zależności od przepisu...',
+                'ar': 'المكونات الرئيسية: الأرز، التوابل، الخضروات، الدجاج أو السمك حسب الوصفة...'
+            };
+
+            const allergies = {
+                'fr': 'Allergènes : Peut contenir des traces de gluten, fruits de mer selon la recette.',
+                'en': 'Allergens: May contain traces of gluten, seafood depending on the recipe.',
+                'es': 'Alergénicos: Puede contener trazas de gluten, mariscos según la receta.',
+                'de': 'Allergene: Kann Spuren von Gluten und Meeresfrüchten enthalten, je nach Rezept.',
+                'it': 'Allergeni: Può contenere tracce di glutine e frutti di mare a seconda della ricetta.',
+                'pl': 'Alergeny: Może zawierać śladowe ilości glutenu i owoców morza, w zależności od przepisu.',
+                'ar': 'المواد المثيرة للحساسية: قد تحتوي على آثار من الجلوتين، المأكولات البحرية وفقًا للوصفة.'
+            };
+
+            const history = {
+                'fr': 'Le Riz Djerbien a des racines profondes dans la cuisine tunisienne et méditerranéenne, souvent servi lors des célébrations.',
+                'en': 'Djerba Rice has deep roots in Tunisian and Mediterranean cuisine, often served during celebrations.',
+                'es': 'El Arroz Djerbio tiene raíces profundas en la cocina tunecina y mediterránea, a menudo servido en celebraciones.',
+                'de': 'Djerba-Reis hat tiefe Wurzeln in der tunesischen und mediterranen Küche, oft bei Feiern serviert.',
+                'it': 'Il Riso Djerbio ha profonde radici nella cucina tunisina e mediterranea, spesso servito durante le celebrazioni.',
+                'pl': 'Ryż Djerbien ma głębokie korzenie w kuchni tunezyjskiej i śródziemnomorskiej, często podawany podczas uroczystości.',
+                'ar': 'الأرز الجربي له جذور عميقة في المطبخ التونسي والمتوسطي، وغالبًا ما يتم تقديمه خلال الاحتفالات.'
+            };
+
+            const serving = {
+                'fr': 'Le Riz Djerbien est généralement servi avec des légumes grillés et une sauce piquante.',
+                'en': 'Djerba Rice is usually served with grilled vegetables and a spicy sauce.',
+                'es': 'El Arroz Djerbio generalmente se sirve con verduras a la parrilla y una salsa picante.',
+                'de': 'Djerba-Reis wird normalerweise mit gegrilltem Gemüse und einer scharfen Sauce serviert.',
+                'it': 'Il Riso Djerbio è solitamente servito con verdure grigliate e una salsa piccante.',
+                'pl': 'Ryż Djerbien zazwyczaj podaje się z grillowanymi warzywami i pikantnym sosem.',
+                'ar': 'يُقدّم الأرز الجربي عادةً مع الخضروات المشوية وصوص حار.'
+            };
+
+            // Switch content based on the selected language
+            document.querySelector('.container h1').textContent = texts[language];
+            document.querySelector('.overview h2').textContent = language === 'en' ? 'Overview' : 
+                (language === 'es' ? 'Visión general' : 
+                (language === 'de' ? 'Übersicht' : 
+                (language === 'it' ? 'Panoramica' : 
+                (language === 'pl' ? 'Przegląd' : 
+                (language === 'ar' ? 'نظرة عامة' : 'Présentation')))));
+            document.querySelector('.calories h2').textContent = language === 'en' ? 'Calories' : 
+                (language === 'es' ? 'Calorías' : 
+                (language === 'de' ? 'Kalorien' : 
+                (language === 'it' ? 'Calorie' : 
+                (language === 'pl' ? 'Kalorie' : 
+                (language === 'ar' ? 'السعرات الحرارية' : 'Calories')))));
+            document.querySelector('.components h2').textContent = language === 'en' ? 'Ingredients' : 
+                (language === 'es' ? 'Ingredientes' : 
+                (language === 'de' ? 'Zutaten' : 
+                (language === 'it' ? 'Ingredienti' : 
+                (language === 'pl' ? 'Składniki' : 
+                (language === 'ar' ? 'المكونات' : 'Ingrédients')))));
+            document.querySelector('.allergies h2').textContent = language === 'en' ? 'Allergens' : 
+                (language === 'es' ? 'Alergénicos' : 
+                (language === 'de' ? 'Allergene' : 
+                (language === 'it' ? 'Allergeni' : 
+                (language === 'pl' ? 'Alergeny' : 
+                (language === 'ar' ? 'المواد المثيرة للحساسية' : 'Allergènes')))));
+            document.querySelector('.history h2').textContent = language === 'en' ? 'History' : 
+                (language === 'es' ? 'Historia' : 
+                (language === 'de' ? 'Geschichte' : 
+                (language === 'it' ? 'Storia' : 
+                (language === 'pl' ? 'Historia' : 
+                (language === 'ar' ? 'التاريخ' : 'Historique')))));
+            document.querySelector('.serving h2').textContent = language === 'en' ? 'Serving' : 
+                (language === 'es' ? 'Servicio' : 
+                (language === 'de' ? 'Servieren' : 
+                (language === 'it' ? 'Servire' : 
+                (language === 'pl' ? 'Serwowanie' : 
+                (language === 'ar' ? 'طريقة التقديم' : 'Service')))));
+
+            document.querySelector('.overview p').textContent = overviews[language];
+            document.querySelector('.calories p').textContent = calories[language];
+            document.querySelector('.components p').textContent = components[language];
+            document.querySelector('.allergies p').textContent = allergies[language];
+            document.querySelector('.history p').textContent = history[language];
+            document.querySelector('.serving p').textContent = serving[language];
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="dish-name">Riz Djerbien</h1>
+            <div class="flags">
+                <img src="https://flagcdn.com/fr.svg" alt="French" title="Français" onclick="switchLanguage('fr')">
+                <img src="https://flagcdn.com/gb.svg" alt="English" title="English" onclick="switchLanguage('en')">
+                <img src="https://flagcdn.com/es.svg" alt="Spanish" title="Español" onclick="switchLanguage('es')">
+                <img src="https://flagcdn.com/de.svg" alt="German" title="Deutsch" onclick="switchLanguage('de')">
+                <img src="https://flagcdn.com/it.svg" alt="Italian" title="Italiano" onclick="switchLanguage('it')">
+                <img src="https://flagcdn.com/pl.svg" alt="Polish" title="Polski" onclick="switchLanguage('pl')">
+                <img src="https://flagcdn.com/tn.svg" alt="Arabic" title="العربية" onclick="switchLanguage('ar')">
+            </div>
+        </header>
+
+        <img class="dish-image" src="https://www.tunisienumerique.com/wp-content/uploads/2023/01/rouz-jerbi.jpg" alt="Riz Djerbien">
+        <div class="overview">
+            <h2>Aperçu</h2>
+            <p id="overview">Le Riz Djerbien est un plat typique de l'île de Djerba, préparé avec du riz et des épices locales.</p>
+        </div>
+
+        <div class="calories">
+            <h2>Calories</h2>
+            <p id="calories">Environ 250 calories par portion...</p>
+        </div>
+
+        <div class="components">
+            <h2>Composants principaux</h2>
+            <p id="components">Composants principaux : Riz, épices, légumes, poulet ou poisson selon la recette...</p>
+        </div>
+
+        <div class="allergies">
+            <h2>Allergènes</h2>
+            <p id="allergies">Allergènes : Peut contenir des traces de gluten, fruits de mer selon la recette.</p>
+        </div>
+
+        <div class="history">
+            <h2>Histoire</h2>
+            <p id="history">Le Riz Djerbien a des racines profondes dans la cuisine tunisienne et méditerranéenne, souvent servi lors des célébrations.</p>
+        </div>
+
+        <div class="serving">
+            <h2>Présentation</h2>
+            <p id="serving">Le Riz Djerbien est généralement servi avec des légumes grillés et une sauce piquante.</p>
+        </div>
+
+        <div class="back-to-top">
+            <a href="#">Retour en haut</a>
+        </div>
+        <p style="text-align: center; font-size: 12px;">&copy; 2025 Seabel Rym Beach Hotel. Tous droits réservés.</p>
+    </div>
+        <img class="logo" src="https://www.seabelhotels.com/wp-content/uploads/2021/12/Logo_slide_rym_beach.png" alt="Seabel Rym Beach Hotel Logo">
+        </div>
+
+<script>
+    // Désactiver le clic droit
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        alert("Le clic droit est désactivé sur cette page.");
+    });
+
+    // Empêcher la sélection de texte
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+    });
+
+    // Bloquer les raccourcis clavier (Ctrl+C, Ctrl+U, etc.)
+    document.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's' || e.key === 'p')) || 
+            (e.key === 'PrintScreen')) {
+            e.preventDefault();
+            alert("Les raccourcis clavier sont désactivés sur cette page.");
+        }
+    });
+</script>
+
+</body>
+</html>
 </body>
 </html>
